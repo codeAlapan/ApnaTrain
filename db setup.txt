@@ -1,0 +1,56 @@
+🚉 Railway Project: MongoDB Atlas + Git Branch Setup (Step-by-Step Guide)
+🧱 Step 1: Create a New Project in MongoDB Atlas
+Go to https://cloud.mongodb.com
+
+Click on "New Project"
+
+Project name: RailwayApp (or any name)
+
+Skip team invite → Click Create Project
+
+🚀 Step 2: Create a Free Shared Cluster
+Inside your project, click "Build a Database"
+
+Select: Shared (M0) → Click Create
+
+Choose Cloud Provider: AWS, Region: Asia (Mumbai) (or closest)
+
+Leave default cluster name (Cluster0) or change it
+
+Click Create Cluster
+
+👤 Step 3: Add a Database User
+Go to Database Access (left sidebar)
+
+Click "Add New Database User"
+
+Username: railwayUser
+
+Password: railwayPass123 (use a strong one)
+
+Role: Read and Write to any database
+
+Click Add User
+
+🌐 Step 4: Whitelist IP Addresses
+Go to Network Access (left sidebar)
+
+Click "Add IP Address"
+
+Choose: Allow access from anywhere (0.0.0.0/0) → Confirm
+
+🔗 Step 5: Get the Connection String
+Go to Database → Click your cluster
+
+Click "Connect" → Choose "Connect your application"
+
+Copy this string:
+mongodb+srv://railwayUser:<password>@cluster0.xxxxxx.mongodb.net/?retryWrites=true&w=majority
+Replace <password> with your actual password
+
+Add DB name (auto-created), e.g.:
+mongodb+srv://railwayUser:railwayPass123@cluster0.xxxxxx.mongodb.net/railwayDB?retryWrites=true&w=majority
+
+⚙️ Step 6: Use Connection in Your Code
+Create a .env file:
+MONGODB_URI=mongodb+srv://railwayUser:railwayPass123@cluster0.xxxxxx.mongodb.net/railwayDB?retr
