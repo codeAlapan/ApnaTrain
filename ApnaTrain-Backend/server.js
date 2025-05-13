@@ -10,6 +10,14 @@ const app = express();
 app.use(express.json());
 
 
+// Routes:
+const authRoutes = require("./routes/auth.routes.js");
+
+
+
+app.use("/api/auth",authRoutes);
+
+
 
 // ✅ 404 handler
 app.use((req, res, next) => {

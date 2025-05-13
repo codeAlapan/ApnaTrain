@@ -1,4 +1,6 @@
 git checkout -b dev-rahul
+
+
 # Code changes karo...
 git add .
 git commit -m "Added booking API"
@@ -9,3 +11,13 @@ git push origin dev-Rahul
 # Update your local main branch
 git checkout main
 git pull origin main
+
+# update your branch with main branch content
+# Step 1: Switch to your branch
+git checkout feature/login
+
+# Step 2: Get latest main
+git fetch origin
+
+# Step 3: Merge main into your branch
+git merge origin/main
