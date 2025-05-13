@@ -4,7 +4,7 @@ git add .
 git commit -m "Added booking API"
 git push origin dev-Rahul
 
-# nor merge the pull request from github
+# now merge the pull request from github
 
 # Update your local main branch
 git checkout main
