@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const {registerPassenger,loginPassenger} = require("../controllers/auth.controller.js")
 
-router.get("/test",async(req,res) => {
-    res.status(200).json({ message: 'API is working fine 🚀' });
-});
+router.post("/register",registerPassenger);
+router.post("/login",loginPassenger);
 
 module.exports = router;
