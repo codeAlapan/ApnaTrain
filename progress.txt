@@ -5,3 +5,4 @@
 | 3     | Basic Folder Structure + Server Setup    | ✅ Complete |
 | 4     | .env config, DB Connect, Nodemon, Routes | ✅ Complete |
 | 5     | Auth (JWT, bcrypt), Middlewares          | ✅ Complete |
+| 6     | Role-Based Access Control (RBAC)         | ✅ Complete |
