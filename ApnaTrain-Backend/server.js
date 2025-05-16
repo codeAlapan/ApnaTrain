@@ -13,10 +13,12 @@ app.use(express.json());
 
 // Routes:
 const authRoutes = require("./routes/auth.routes.js");
+const trainRoutes = require("./routes/train.routes.js");
 
 
 
 app.use("/api/auth",authRoutes);
+app.use("/api/trains",trainRoutes);
 
 
 
