@@ -1,7 +1,8 @@
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 const Passenger = require('../models/Passenger.model.js');
 const Admin = require('../models/Admin.model.js');
+const genarateToken = require('../utils/generateToken.js');
 
 
 // Register Passenger
@@ -55,11 +56,7 @@ const loginPassenger = async (req, res) => {
       return res.status(401).json({ message: 'Invalid credentials' });
 
     // Token generation
-    const token = jwt.sign(
-      { id: passenger._id, role: 'passenger' },
-      process.env.JWT_SECRET,
-      { expiresIn: '7d' }
-    );
+    const token = genarateToken(passenger);
 
     res.status(200).json({ message: 'Login successful', token });
   } catch (err) {
@@ -80,11 +77,7 @@ const loginPassenger = async (req, res) => {
     if (!isMatch)
       return res.status(401).json({ message: 'Invalid credentials' });
 
-    const token = jwt.sign(
-      { id: admin._id, role: 'admin' },
-      process.env.JWT_SECRET,
-      { expiresIn: '7d' }
-    );
+    const token = genarateToken(admin);
 
     res.status(200).json({ message: 'Admin login successful', token });
   } catch (err) {

@@ -34,6 +34,11 @@ const passengerSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    role: {
+      type: String,
+      enum: ['passenger'],
+      default: 'passenger',
+    },
   },
   {
     timestamps: true,
@@ -41,4 +46,4 @@ const passengerSchema = new mongoose.Schema(
 );
 
 // Creating the Passenger model
-module.exports = mongoose.model("Passenger",passengerSchema);
+module.exports = mongoose.model('Passenger', passengerSchema);
