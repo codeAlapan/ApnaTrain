@@ -1,0 +1,7 @@
+| Phase | Description                              | Status     |
+| ----- | ---------------------------------------- | ---------- |
+| 1     | Project Setup + Plan                     | ✅ Complete |
+| 2     | DB Design (MongoDB based)                | ✅ Complete |
+| 3     | Basic Folder Structure + Server Setup    | ✅ Complete |
+| 4     | .env config, DB Connect, Nodemon, Routes | ✅ Complete |
+| 5     | Auth (JWT, bcrypt), Middlewares          | ✅ Complete |
