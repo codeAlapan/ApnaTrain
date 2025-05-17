@@ -1,23 +1,41 @@
-const mongoose=require('mongoose');
-const trainSchema=new mongoose.Schema({
-     trainNo: {
-    type: String,
-    required: true,
-    unique: true,
-  },
+const mongoose = require("mongoose");
+
+const trainSchema = new mongoose.Schema({
   trainName: {
     type: String,
     required: true,
   },
-  type: {
+  trainNumber: {
     type: String,
-    required: true, 
+    required: true,
+    unique: true,
   },
-  availableClasses: {
-    type: [String], 
-    default: [],
+  source: {
+    type: String,
+    required: true,
+  },
+  destination: {
+    type: String,
+    required: true,
+  },
+  departureTime: {
+    type: String,
+    required: true,
+  },
+  arrivalTime: {
+    type: String,
+    required: true,
+  },
+  totalSeats: {
+    type: Number,
+    required: true,
+  },
+  fare: {
+    type: Number,
+    required: true,
   },
 }, {
-  timestamps: true
+  timestamps: true,
 });
-module.exports=mongoose.model('Train',trainSchema);
+
+module.exports = mongoose.model("Train", trainSchema);
