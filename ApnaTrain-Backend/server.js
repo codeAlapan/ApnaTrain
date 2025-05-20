@@ -18,6 +18,7 @@ const stationRoutes = require("./routes/station.routes.js");
 app.use("/api/auth", authRoutes);
 app.use("/api/trains", trainRoutes);
 app.use("/api/station", stationRoutes); // ✅ fixed
+app.use("/api/reservations",reservationRoutes);
 
 // 404 handler
 app.use((req, res, next) => {
