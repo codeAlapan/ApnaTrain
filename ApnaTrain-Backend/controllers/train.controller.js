@@ -12,6 +12,8 @@ const addTrain = async (req, res) => {
       arrivalTime,
       totalSeats,
       fare,
+      availableSeats,
+      farePerSeat
     } = req.body;
     const newTrain = new Train({
       trainName,
@@ -22,10 +24,12 @@ const addTrain = async (req, res) => {
       arrivalTime,
       totalSeats,
       fare,
+      availableSeats,
+      farePerSeat
     });
 
     await newTrain.save();
-    res.status(201).json({ success: true, data: train });
+    res.status(201).json({ success: true, data: newTrain });
   } catch (err) {
     res.status(400).json({ success: false, message: err.message });
   }
