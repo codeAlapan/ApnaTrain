@@ -12,31 +12,22 @@ const trainSchema = new mongoose.Schema(
       unique: true,
     },
     source: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Station',
       required: true,
     },
     destination: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Station',
       required: true,
     },
+
     departureTime: {
       type: String,
       required: true,
     },
     arrivalTime: {
       type: String,
-      required: true,
-    },
-    totalSeats: {
-      type: Number,
-      required: true,
-    },
-    availableSeats: {
-      type: Number,
-      required: true,
-    },
-    farePerSeat: {
-      type: Number,
       required: true,
     },
   },

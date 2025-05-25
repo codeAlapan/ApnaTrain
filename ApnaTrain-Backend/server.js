@@ -14,11 +14,13 @@ const authRoutes = require('./routes/auth.routes.js');
 const trainRoutes = require('./routes/train.routes.js');
 const stationRoutes = require('./routes/station.routes.js');
 const reservationRoutes = require('./routes/reservation.routes.js');
+const trainClassConfigRoutes = require('./routes/trainClassConfig.routes.js');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/trains', trainRoutes);
 app.use('/api/station', stationRoutes);
 app.use('/api/reservations', reservationRoutes);
+app.use('/api/configs', trainClassConfigRoutes);
 
 // 404 handler
 app.use((req, res, next) => {
