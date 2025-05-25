@@ -1,13 +1,8 @@
 const mongoose = require('mongoose');
 
-const reservationSchema = new mongoose.Schema(
+const trainClassConfigSchema = new mongoose.Schema(
   {
-    userId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Passenger',
-      required: true,
-    },
-    trainId: {
+    train: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Train',
       required: true,
@@ -23,10 +18,11 @@ const reservationSchema = new mongoose.Schema(
       required: true,
     },
     classCode: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'TrainClass',
       required: true,
     },
-    seatsBooked: {
+    seatCount: {
       type: Number,
       required: true,
     },
@@ -34,12 +30,12 @@ const reservationSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    bookingDate: {
-      type: Date,
-      default: Date.now,
-    },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model('Reservation', reservationSchema);
+const TrainClassConfig = mongoose.model(
+  'TrainClassConfig',
+  trainClassConfigSchema
+);
+module.exports = TrainClassConfig;
