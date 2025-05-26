@@ -21,7 +21,6 @@ const trainSchema = new mongoose.Schema(
       ref: 'Station',
       required: true,
     },
-
     departureTime: {
       type: String,
       required: true,
@@ -30,6 +29,14 @@ const trainSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    route: [
+      {
+        station: { type: mongoose.Schema.Types.ObjectId, ref: 'Station' },
+        arrivalTime: String,
+        departureTime: String,
+        dayOffset: Number,
+      }
+    ]
   },
   {
     timestamps: true,

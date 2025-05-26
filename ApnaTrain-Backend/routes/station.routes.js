@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const {
-  addStation,
+  createStation,
   getAllStations,
   updateStation,
   deleteStation,
@@ -12,7 +12,7 @@ const protect = require('../middlewares/auth.middleware.js');
 const authorizedRoles = require('../middlewares/role.middleware.js');
 
 // Admin routes
-router.post('/add', protect, authorizedRoles('admin'), addStation);
+router.post('/create', protect, authorizedRoles('admin'), createStation);
 router.put('/update/:id', protect, authorizedRoles('admin'), updateStation);
 router.delete('/delete/:id', protect, authorizedRoles('admin'), deleteStation);
 
