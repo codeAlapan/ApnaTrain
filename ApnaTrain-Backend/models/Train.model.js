@@ -31,12 +31,18 @@ const trainSchema = new mongoose.Schema(
     },
     route: [
       {
-        station: { type: mongoose.Schema.Types.ObjectId, ref: 'Station' },
+        station: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Station',
+          required: true,
+        },
         arrivalTime: String,
         departureTime: String,
-        dayOffset: Number,
-      }
-    ]
+        stopNumber: Number,
+      },
+    ],
+
+
   },
   {
     timestamps: true,
