@@ -23,7 +23,8 @@ const reservationSchema = new mongoose.Schema(
       required: true,
     },
     classCode: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'TrainClass',
       required: true,
     },
     seatsBooked: {
@@ -37,6 +38,10 @@ const reservationSchema = new mongoose.Schema(
     bookingDate: {
       type: Date,
       default: Date.now,
+    },
+    journeyDate: {
+      type: String, // Store as ISO date string
+      required: true,
     },
   },
   { timestamps: true }

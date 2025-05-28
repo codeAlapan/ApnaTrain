@@ -96,14 +96,18 @@ const searchAvailableTrains = async (req, res) => {
     const matchingTrains = [];
 
     for (let config of configs) {
+      // get the schedule of the current config train
       const schedule = await Schedule.findOne({ train: config.train._id });
 
+      // check if train runs on weekdays and te journey day isnot in excludeDates
       const runNormally =
         schedule?.runsOnDays.includes(weekday) &&
         !schedule.excludeDates.includes(journeyDate);
 
+      // check if the train is forced run on the particular journey date
       const forceRun = schedule?.includeDates.includes(journeyDate);
 
+      // if either of the case works
       if (runNormally || forceRun) {
         matchingTrains.push({
           trainId: config.train._id,
