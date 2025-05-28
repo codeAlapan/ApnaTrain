@@ -41,6 +41,8 @@ const trainSchema = new mongoose.Schema(
         stopNumber: Number,
       },
     ],
+
+
   },
   {
     timestamps: true,
