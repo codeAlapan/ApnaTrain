@@ -11,7 +11,7 @@ const protect = require('../middlewares/auth.middleware.js');
 const authorizedRoles = require('../middlewares/role.middleware.js');
 
 router.post('/book', protect, bookTicket);
-router.get('/myreservations', protect, getUserReservations);
+router.get('/my-bookings', protect, getUserReservations);
 router.delete('/cancel/:id', protect, cancelReservation);
 router.get('/all', protect, authorizedRoles('admin'), getAllReservations);
 

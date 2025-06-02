@@ -12,6 +12,7 @@ const reservationSchema = new mongoose.Schema(
       ref: 'Train',
       required: true,
     },
+    
     fromStation: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Station',
