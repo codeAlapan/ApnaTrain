@@ -101,10 +101,9 @@ const getUserReservations = async (req, res) => {
   try {
     const userId = req.user._id;
     const reservations = await Reservation.find({ userId })
-      .populate('userId', 'fullName gender email')
-      .populate('trainId', 'trainName trainNumber')
+       .populate('trainId', 'trainName trainNumber')
       .populate('fromStation toStation classCode')
-      .exec();
+      .sort({ bookingDate: -1 });
 
     res.json({ reservations });
   } catch (err) {
